@@ -1,5 +1,5 @@
 demo:
-  msg: hiii
+  msg: hello
 
 server:
   port: 8080
