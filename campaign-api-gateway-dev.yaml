@@ -53,6 +53,7 @@ endpoint:
     - ${ZIPKIN_URL}
     - /webjars/
     - /v3-new
+    - /msg
 
 #management:
 #  tracing:
