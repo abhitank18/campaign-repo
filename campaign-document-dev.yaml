@@ -1,3 +1,6 @@
+demo:
+  msg: hello campaign-document
+
 server:
   port: 9077
   servlet:
