@@ -42,6 +42,7 @@ spring:
       user: campaign_user
       inquiry: user_inquiry
       actionCard : actionCard_user
+      action-cards: action_cards
   cloud:
     consul:
       host: ${CONSUL_HOST_NAME}
