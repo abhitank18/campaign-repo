@@ -54,6 +54,7 @@ endpoint:
     - /webjars/
     - /v3-new
     - /msg
+    - /actuator/busrefresh
 
 #management:
 #  tracing:
