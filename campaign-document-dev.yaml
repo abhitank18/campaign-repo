@@ -19,24 +19,24 @@ spring:
   #  liquibase:
   #    enabled: true
   #    change-log: classpath:db/changelog-master.xml
-  # kafka:
-  #   consumer:
-  #     bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
-  #     auto-offset-reset: earliest
-  #     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  #     value-deserializer: org.springframework.kafka.support.serializer.StringDeserializer
-  # producer:
-  #   bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
-  #   key-serializer: org.apache.kafka.common.serialization.StringSerializer
-  #   value-serializer: org.springframework.kafka.support.serializer.StringDeserializer
-  # cloud:
-  #   consul:
-  #     host: ${CONSUL_HOST_NAME}
-  #     port: ${CONSUL_PORT}
-  #     discovery:
-  #       instance-id: ${spring.application.name} + ${random.value}
-  #       healthCheckPath: ${server.servlet.context-path}/actuator/health
-  #       serviceName: ${spring.application.name}
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ByteArrayDeserializer
+  producer:
+    bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.ByteArrayDeserializer
+  cloud:
+    consul:
+      host: ${CONSUL_HOST_NAME}
+      port: ${CONSUL_PORT}
+      discovery:
+        instance-id: ${spring.application.name} + ${random.value}
+        healthCheckPath: ${server.servlet.context-path}/actuator/health
+        serviceName: ${spring.application.name}
 
 management:
   tracing:
