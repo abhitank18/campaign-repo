@@ -54,7 +54,9 @@ endpoint:
     - /webjars/
     - /v3-new
     - /msg
-    - /refresh
+    - /actuator/refresh
+    - /actuator/beans
+    - /actuator/busrefresh
     - /actuator/bus-refresh
 
 #management:
