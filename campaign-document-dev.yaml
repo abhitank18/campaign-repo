@@ -1,5 +1,5 @@
 demo:
-  msg: hello campaign-document v8
+  msg: hello campaign-document v9
 
 server:
   port: 9077
