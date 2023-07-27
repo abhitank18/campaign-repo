@@ -48,7 +48,7 @@ spring:
           json:
             trusted:
               packages: "*"
-      value-deserializer: com.campaign.config.DebugJsonDeserializer
+      value-deserializer: com.campaign.config.MyCustomDeserializer
       enable-auto-commit: 'false'
       group-id: campaign_auth
     producer:
