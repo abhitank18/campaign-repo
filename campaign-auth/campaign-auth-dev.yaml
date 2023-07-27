@@ -75,6 +75,9 @@ spring:
           starttls:
             enable: true
   cloud:
+    stream:
+      default:
+        contentType: application/json
     consul:
       host: ${CONSUL_HOST_NAME}
       port: ${CONSUL_PORT}
