@@ -29,14 +29,14 @@ spring:
   #   bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
   #   key-serializer: org.apache.kafka.common.serialization.StringDeserializer
   #   value-serializer: org.springframework.kafka.support.serializer.JsonDeserializer
-  # cloud:
-  #   consul:
-  #     host: ${CONSUL_HOST_NAME}
-  #     port: ${CONSUL_PORT}
-  #     discovery:
-  #       instance-id: ${spring.application.name} + ${random.value}
-  #       healthCheckPath: ${server.servlet.context-path}/actuator/health
-  #       serviceName: ${spring.application.name}
+  cloud:
+    consul:
+      host: ${CONSUL_HOST_NAME}
+      port: ${CONSUL_PORT}
+      discovery:
+        instance-id: ${spring.application.name} + ${random.value}
+        healthCheckPath: ${server.servlet.context-path}/actuator/health
+        serviceName: ${spring.application.name}
 
 management:
   tracing:
