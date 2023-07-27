@@ -48,7 +48,7 @@ spring:
           json:
             trusted:
               packages: "*"
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: com.campaign.config.DebugJsonDeserializer
       enable-auto-commit: 'false'
       group-id: campaign_auth
     producer:
