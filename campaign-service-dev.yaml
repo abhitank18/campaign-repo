@@ -1,5 +1,5 @@
 demo:
-  msg: hello service
+  msg: hello service v2
 
 server:
   port: 9072
