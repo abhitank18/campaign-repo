@@ -1,0 +1,42 @@
+
+
+server:
+  port: 9078
+  servlet:
+    context-path: /${BATCH_CONTEXT_PATH}
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog-master.xml
+  cloud:
+    consul:
+      host: ${CONSUL_HOST_NAME}
+      port: ${CONSUL_PORT}
+      discovery:
+        instance-id: ${spring.application.name} + ${random.value}
+        healthCheckPath: ${server.servlet.context-path}/actuator/health
+        serviceName: ${spring.application.name}
+
+  kafka:
+    producer:
+      bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    topic:
+      delete-users: delete_users
+
+scheduler:
+  cron-string: ${SCHEDULER_CRON_STRING}
+
+#swagger openapi configuration
+openapi:
+  service:
+    title: campaign-batch DEV server doc
+    version: 1.0.0
+    url: ${GATEWAY_URL}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
