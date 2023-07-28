@@ -40,7 +40,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
     consumer-properties:
       springCloudBus:
-        value-deserializer: org.springframework.kafka.support.serializer.ByteArrayDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
     topic:
       user: campaign_user
       inquiry: user_inquiry
