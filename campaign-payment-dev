@@ -21,11 +21,11 @@ spring:
       bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    springCloudBus:
-        value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
-      default:
-        value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-  producer:
+      springCloudBus:
+          value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+        default:
+          value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    producer:
     bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
