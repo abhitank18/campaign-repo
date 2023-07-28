@@ -1,5 +1,5 @@
 demo:
-  msg: hello campaign analytics v1
+  msg: hello campaign analytics v2
 
 server:
   port: 9075
