@@ -1,5 +1,5 @@
 demo:
-  msg: hello payment v3
+  msg: hello payment v4
 
 server:
   port: 9080
