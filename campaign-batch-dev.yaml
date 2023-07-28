@@ -1,4 +1,5 @@
-
+demo:
+  msg: snajsajsajs v6
 
 server:
   port: 9078
