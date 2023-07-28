@@ -1,5 +1,5 @@
 demo:
-  msg: hello campaign-auth v7
+  msg: hello campaign-auth v8
 
 server:
   port: 9071
