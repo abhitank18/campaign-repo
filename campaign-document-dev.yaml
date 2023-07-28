@@ -24,7 +24,7 @@ spring:
       bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      value-deserializer: com.campaign.document.config.MyCustomDeserializer
   producer:
     bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
     key-serializer: org.apache.kafka.common.serialization.StringDeserializer
