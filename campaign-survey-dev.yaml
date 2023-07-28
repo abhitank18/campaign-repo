@@ -1,0 +1,55 @@
+server:
+  port: 9076
+  servlet:
+    context-path: /${SURVEY_CONTEXT_PATH}
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST_PORT}/campaign_db?currentSchema=survey
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  #  liquibase:
+  #    enabled: true
+  #    change-log: classpath:db/changelog-master.xml
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+  producer:
+    bootstrap-servers: ${KAFKA_CONSUMER_BOOTSTRAP_SERVERS}
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  cloud:
+    consul:
+      host: ${CONSUL_HOST_NAME}
+      port: ${CONSUL_PORT}
+      discovery:
+        instance-id: ${spring.application.name} + ${random.value}
+        healthCheckPath: ${server.servlet.context-path}/actuator/health
+        serviceName: ${spring.application.name}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+
+#swagger openapi configuration
+openapi:
+  service:
+    title: campaign-survey DEV server doc
+    version: 1.0.0
+    url: ${GATEWAY_URL}
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
