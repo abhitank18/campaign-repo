@@ -1,3 +1,6 @@
+demo:
+  msg: hello payment v3
+
 server:
   port: 9080
   servlet:
