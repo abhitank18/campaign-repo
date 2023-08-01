@@ -1,5 +1,5 @@
 demo:
-  msg: hi campaign-survey
+  msg: hi campaign-survey v2
 
 server:
   port: 9076
