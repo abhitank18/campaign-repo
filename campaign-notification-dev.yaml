@@ -1,5 +1,5 @@
 demo:
-  msg: hello campaign-notification v1
+  msg: hello campaign-notification v2
 
 server:
   port: 9079
