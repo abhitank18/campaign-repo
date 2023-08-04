@@ -31,7 +31,10 @@ spring:
           json:
             trusted:
               packages: "*"
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      springCloudBus:
+        value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      default:
+        value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       enable-auto-commit: 'false'
       group-id: campaign_notification
     topic:
